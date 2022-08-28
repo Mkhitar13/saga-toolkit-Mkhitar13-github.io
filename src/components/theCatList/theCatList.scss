@@ -1,0 +1,149 @@
+img {
+      width: 100%;
+      height: 100%;
+}
+
+#containerOfAllListOfCats {
+      width: 100%;
+      // height: 35%;
+      display: grid;
+      grid-template-columns: repeat(3, 25%);
+      padding: 50px;
+      justify-content: center;
+      align-content: center;
+      gap: 25px;
+      box-sizing: border-box;
+
+      #containerOfImgesAndDescription {
+            width: 80%;
+            display: grid;
+            grid-template-columns: 20% 60%;
+            justify-content: space-around;
+            height: 40vh;
+            background: #c7c7c7;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            gap: 100px;
+            padding: 30px;
+
+            #imgContainer {
+                  width: 200px;
+                  height: 200px;
+                  box-sizing: border-box;
+                  border: 4px solid white;
+                  border-radius: 30px;
+                  margin-top: 10px;
+
+                  img {
+                        border-radius: 30px;
+                  }
+            }
+
+            #descriptionContainer {
+                  height: 100%;
+                  display: grid;
+                  align-content: stretch;
+                  gap: 15px;
+                  border-radius: 20px;
+                  color: white;
+                  box-sizing: border-box;
+
+                  h2 {
+                        text-align: justify;
+                        height: 10vh;
+                        box-sizing: border-box;
+                        overflow: auto;
+                        padding: 0 10px;
+                        align-self: start;
+                  }
+
+                  p {
+                        align-self: start;
+                        display: inline-block;
+                        // overflow: -moz-hidden-unscrollable;
+                  }
+            }
+      }
+}
+
+@media only screen and (min-width: 2010px) {
+      #containerOfAllListOfCats {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+      }
+}
+
+@media only screen and (max-width: 2010px) {
+      #containerOfAllListOfCats {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+      }
+}
+
+
+@media only screen and (max-width: 1510px) {
+      #containerOfAllListOfCats {
+            display: grid;
+            grid-template-columns: repeat(1, 100%);
+            justify-content: center;
+
+            #containerOfImgesAndDescription {
+                  display: grid;
+                  grid-template-columns: 20% 60%;
+            }
+      }
+}
+
+
+@media only screen and (max-width: 900px) {
+      #containerOfAllListOfCats {
+            width: 100%;
+
+            #containerOfImgesAndDescription {
+                  width: 100%;
+                  margin: 0 auto;
+                  height: 75vh;
+                  display: grid;
+                  grid-template-columns: 100%;
+                  gap: 0;
+
+                  #descriptionContainer {
+                        height: 80%;
+                        gap: 0;
+                  }
+            }
+      }
+}
+
+@media only screen and (max-width: 500px) {
+      #containerOfAllListOfCats {
+            width: 100%;
+            padding: 0;
+
+            #containerOfImgesAndDescription {
+
+                  width: 100%;
+                  margin: 0 auto;
+                  height: 75vh;
+                  display: grid;
+                  grid-template-columns: 100%;
+                  align-content: center;
+                  justify-content: center;
+                  padding: 0;
+                  gap: 0 auto;
+
+                  #imgContainer {
+                        margin: 0 auto;
+                  }
+
+                  #descriptionContainer {
+                        text-align: center;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+                        height: 80%;
+                        gap: 0;
+                  }
+            }
+      }
+}
