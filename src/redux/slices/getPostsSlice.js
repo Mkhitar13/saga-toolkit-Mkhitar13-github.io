@@ -23,9 +23,12 @@ export const reducerOfPosts = createSlice({
             changeCountOfCatsList: (state, action) => {
                   state.countOfCats = action.payload
             },
+            removeItemInArray: (state, action) => {
+                  state.countOfCats = action.payload
+            },
       }
 })
 
-export const { getCatsFetch, getCatsSuccess, getCatsFailure, changeCountOfCatsList } = reducerOfPosts.actions;
+export const { getCatsFetch, getCatsSuccess, getCatsFailure, changeCountOfCatsList, removeItemInArray } = reducerOfPosts.actions;
 export default reducerOfPosts.reducer;
 

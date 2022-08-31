@@ -1,7 +1,7 @@
 import "./theSelectSection.scss";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getCatsFetch, changeCountOfCatsList } from "../../redux/slices/getPostsSlice";
+import { getCatsFetch, changeCountOfCatsList, removeItemInArray } from "../../redux/slices/getPostsSlice";
 
 const TheSelectSection = () => {
 
@@ -11,6 +11,10 @@ const TheSelectSection = () => {
       const callOfChangeCountOfCatsList = () => {
             dispatch(getCatsFetch());
             dispatch(changeCountOfCatsList(count));
+      }
+
+      const removeItemOfCatsList = () => {
+            dispatch(removeItemInArray());
       }
 
       useEffect(() => {
@@ -34,6 +38,12 @@ const TheSelectSection = () => {
                               type="button"
                               value="change count of cats"
                               onClick={callOfChangeCountOfCatsList}
+                        />
+
+<input
+                              type="button"
+                              value="delete"
+                              onClick={removeItemOfCatsList}
                         />
 
                   </div>
