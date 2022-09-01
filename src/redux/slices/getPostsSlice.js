@@ -4,6 +4,7 @@ const initialState = {
       cats: [],
       countOfCats: 3,
       isLoading: false,
+      arr: []
 }
 
 export const reducerOfPosts = createSlice({
@@ -24,7 +25,7 @@ export const reducerOfPosts = createSlice({
                   state.countOfCats = action.payload
             },
             removeItemInArray: (state, action) => {
-                  state.countOfCats = action.payload
+                  state.arr = action.payload
             },
       }
 })
