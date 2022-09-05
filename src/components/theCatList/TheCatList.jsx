@@ -2,40 +2,46 @@ import "./theCatList.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { FaBattleNet } from "react-icons/fa";
 import { removeItemInArray } from "../../redux/slices/getPostsSlice";
+import { useEffect } from "react";
 
 const TheCatList = () => {
-      const data = useSelector(item => item.rootReducer.cats.cats);
-      const dispatch = useDispatch();
+  const data = useSelector((item) => item.rootReducer.cats.cats);
+  const dispatch = useDispatch();
 
-      const removeItem = () => {
-            console.log("remove");
-            dispatch(removeItemInArray())
-      }
-      return (
-            <div id="containerOfAllListOfCats">
-                  {data.map(item =>
-                        <div key={item.id} id="containerOfImgesAndDescription">
+  // const removeItem = (idOfCat) => {
+  //       // let id = idOfCat;
+  //       // dispatch(removeItemInArray(id))
+  //       console.log(idOfCat);
 
-                              <div id="deleteItem" onClick={removeItem}>
-                                    <FaBattleNet fill="white" size="30px"/>
-                              </div>
+  // }
 
-                              <div id="imgContainer">
-                                    <img
-                                          src={item.image.url}
-                                          alt={item.name}
-                                    />
-                              </div>
+//   useEffect(() => {
+//       removeItemInArray()
+//   }, [data]);
 
-                              <div id="descriptionContainer">
-                                    <h3>{item.name}</h3>
-                                    <h4>`temperament ${item.temperament}`</h4>
-                                    <p>{item.description}</p>
-                              </div>
+  return (
+    <div id="containerOfAllListOfCats">
+      {data.map((item) => (
+        <div key={item.id} id="containerOfImgesAndDescription">
+          <div
+            id="deleteItem"
+            onClick={() => dispatch(removeItemInArray(item.id))}
+          >
+            <FaBattleNet fill="white" size="30px" />
+          </div>
 
-                        </div>
-                  )}
-            </div>
-      )
-}
+          <div id="imgContainer">
+            <img src={item.image.url} alt={item.name} />
+          </div>
+
+          <div id="descriptionContainer">
+            <h3>{item.name}</h3>
+            <h4>`temperament ${item.temperament}`</h4>
+            <p>{item.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 export default TheCatList;

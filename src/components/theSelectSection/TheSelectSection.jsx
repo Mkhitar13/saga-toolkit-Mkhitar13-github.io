@@ -15,8 +15,6 @@ const TheSelectSection = () => {
     dispatch(changeCountOfCatsList(count));
   };
 
-  
-
   useEffect(() => {
     dispatch(getCatsFetch());
   }, []);
@@ -39,9 +37,6 @@ const TheSelectSection = () => {
           value="change count of cats"
           onClick={callOfChangeCountOfCatsList}
         />
-
-
-
       </div>
     </div>
   );
