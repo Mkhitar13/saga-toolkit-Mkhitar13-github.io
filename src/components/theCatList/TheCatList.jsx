@@ -5,19 +5,9 @@ import { removeItemInArray } from "../../redux/slices/getPostsSlice";
 import { useEffect } from "react";
 
 const TheCatList = () => {
+
   const data = useSelector((item) => item.rootReducer.cats.cats);
   const dispatch = useDispatch();
-
-  // const removeItem = (idOfCat) => {
-  //       // let id = idOfCat;
-  //       // dispatch(removeItemInArray(id))
-  //       console.log(idOfCat);
-
-  // }
-
-//   useEffect(() => {
-//       removeItemInArray()
-//   }, [data]);
 
   return (
     <div id="containerOfAllListOfCats">

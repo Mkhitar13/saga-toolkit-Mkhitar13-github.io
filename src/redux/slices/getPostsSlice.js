@@ -24,7 +24,7 @@ export const reducerOfPosts = createSlice({
       state.countOfCats = action.payload;
     },
     removeItemInArray: (state, action) => {
-      state.cats.filter((item) => item.id !== action.payload && console.log(action.payload));
+      state.cats = state.cats.filter((item) => item.id !== action.payload);
     },
   },
 });

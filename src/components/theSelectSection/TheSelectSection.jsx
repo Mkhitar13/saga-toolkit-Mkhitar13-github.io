@@ -7,6 +7,7 @@ import {
 } from "../../redux/slices/getPostsSlice";
 
 const TheSelectSection = () => {
+  
   const dispatch = useDispatch();
   const [count, setCount] = useState(0);
 
@@ -26,10 +27,11 @@ const TheSelectSection = () => {
         <input
           type="number"
           placeholder="write count and press the button"
-          onChange={(e) => setCount(e.target.value)}
+          onChange={(e) => setCount( e.target.value === 0 ? 1 : e.target.value )}
           min="1"
           max="30"
           maxLength="30"
+          minLength="1"
           name="quantity"
         />
         <input
