@@ -1,4 +1,4 @@
-import { all, call, put, takeEvery, select, fork } from "redux-saga/effects";
+import { all, call, put, takeEvery, select } from "redux-saga/effects";
 import { getCatsSuccess } from "./slices/getPostsSlice";
 import { getPostsOfcats } from "../api/api";
 
@@ -14,22 +14,9 @@ export function* catSaga() {
       yield takeEvery('cats/getCatsFetch', fetchCatPostsSagaWorker);
 }
 
-// -----------------------------------------------------------------------------------
-
-// function* callOfRemoveItem(id) {
-//       yield fork(removeItemOfcats);
-// }
-
-// export function* removeSagaWatcher() {
-//       yield takeEvery('cats/removeItemInArray', callOfRemoveItem);
-// }
-
-// -----------------------------------------------------------------------------------
-
 export default function* rootSaga() {
       yield all([catSaga()]);
 }
 
 
-
-// =====================================================================================================================
+// ====================================================================================

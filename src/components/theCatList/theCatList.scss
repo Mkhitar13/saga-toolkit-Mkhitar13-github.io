@@ -13,7 +13,7 @@ img {
       align-content: center;
       gap: 25px;
       box-sizing: border-box;
-
+      
       #containerOfImgesAndDescription {
             display: grid;
             grid-template-columns:10% 20% 50%;
@@ -25,6 +25,7 @@ img {
             box-sizing: border-box;
             gap: 10px;
             padding: 30px;
+            box-shadow: 6px 6px 10px rgb(143, 143, 143);
             
             #deleteItem{
                   height: 50px;

@@ -2,8 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cats: [],
-  countOfCats: 3,
+  countOfCats: 4,
   isLoading: false,
+  currentItem: null,
 };
 
 export const reducerOfPosts = createSlice({
